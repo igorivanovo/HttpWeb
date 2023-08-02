@@ -17,6 +17,7 @@ public class Server {
     }
 
     public void start() {
+
         final ExecutorService threadPool = Executors.newFixedThreadPool(64);
         try (final var serverSocket = new ServerSocket(port);) { // стартуем сервер один(!) раз
             threadPool.submit(processingOfTheConnection(serverSocket));
